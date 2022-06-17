@@ -1,0 +1,35 @@
+<div class="rectangle">Orders : {{ getOrder }} </div>
+
+mapGetters(['getOrder']);
+
+
+
+.rectangle {
+  width: 100px;
+  height: 100px;
+  background: grey;
+}
+
+
+
+state -> orders: 0
+
+
+
+setter -> setOrder(state, updatedOrders) {
+  state.orders = updatedOrders;
+}
+
+
+
+getter -> getOrder(state) {
+  return state.orders
+}
+
+
+
+action -> makeAPIcall() {
+  fetch(url, headers).then(response => {
+      setOrder(response)
+  });
+}
